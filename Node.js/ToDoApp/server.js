@@ -1,19 +1,19 @@
 const express= require('express');
 const app=express();
 
-
-app.listen(7777,function(){
-    console.log('listening in 7777')
-});
-
-app.get('/pet', function(req, res) { 
-    res.send('펫용품 사시오')
-  });
-
-app.get('/beauty', function(req, res) { 
-    res.send('뷰티 사시오')
-  });  
+app.use(express.urlencoded({extended: true})) 
 
 app.get('/', function(req, res) { 
     res.send(__dirname+'/index.html')
   });  
+
+app.get('/write', function(req, res) { 
+    res.send(__dirname+'/write.html')
+  });    
+
+  
+app.post('/add', function(요청, 응답){
+  응답.send('전송완료')
+  console.log(요청.body.date);
+  console.log(요청.body.title);
+})
