@@ -13,6 +13,4 @@ public class HelloJavaspringApplication {
 		SpringApplication.run(HelloJavaspringApplication.class, args);
 	}
 
-
-
 }
